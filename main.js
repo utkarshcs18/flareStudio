@@ -1,3 +1,8 @@
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
 const mainNav = document.getElementById('mainNav');
 
 window.addEventListener('scroll', () => {
