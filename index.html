@@ -3,19 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flare Studios — Premium Creative Studio & Digital Agency</title>
+  <title>Flare Studios — </title>
   <meta name="description" content="Flare Studios is a premier creative agency specializing in stunning websites, cinematic video production, and social media growth. We make brands unforgettable.">
   <meta name="keywords" content="creative agency, web design, video production, social media marketing, branding, Flare Studios">
   <meta name="author" content="Flare Studios">
-  
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://flarestudios.in/">
   <meta property="og:title" content="Flare Studios — Where Ideas Ignite">
   <meta property="og:description" content="Stunning websites. Cinematic video production. Social media that turns scrollers into customers.">
   <meta property="og:image" content="https://flarestudios.in/og-image.jpg">
-
-  <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://flarestudios.in/">
   <meta property="twitter:title" content="Flare Studios — Where Ideas Ignite">
@@ -23,11 +19,14 @@
   <meta property="twitter:image" content="https://flarestudios.in/og-image.jpg">
   <link rel="stylesheet" href="main.css">
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <!-- <script type="text/javascript">
+  <script src="config.js"></script>
+  <script type="text/javascript">
     (function() {
-      emailjs.init("qRYlUm"); // <--- ADD YOUR PUBLIC KEY HERE
+      if (typeof CONFIG !== 'undefined') {
+        emailjs.init(CONFIG.EMAILJS_PUBLIC_KEY);
+      }
     })();
-  </script> -->
+  </script>
   <script src="main.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@200;300;400;500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -35,7 +34,6 @@
 
 <body>
   <div class="global-grid"></div>
-
   <nav id="mainNav">
     <a href="#index.html" class="nav-logo">FLARE<span>.</span>STUDIOS</a>
     <ul class="nav-links">

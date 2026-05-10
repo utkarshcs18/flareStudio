@@ -1,0 +1,9 @@
+config.js
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore local environment files
+.env
+.env.local

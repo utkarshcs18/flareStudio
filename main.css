@@ -958,15 +958,6 @@ nav.scrolled {
   box-shadow: 0 12px 40px rgba(184, 135, 42, .3)
 }
 
-.proc-icon-connector {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: calc(100% - 64px + 2px);
-  height: 1px;
-  background: var(--border2);
-  display: none
-}
 
 .proc-name {
   font-family: 'Playfair Display', serif;
