@@ -3,6 +3,10 @@ if (history.scrollRestoration) {
 }
 window.scrollTo(0, 0);
 
+if (window.location.hash) {
+  history.replaceState("", document.title, window.location.pathname + window.location.search);
+}
+
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -22,7 +26,12 @@ requestAnimationFrame(raf);
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    lenis.scrollTo(this.getAttribute('href'));
+    const target = this.getAttribute('href');
+    lenis.scrollTo(target);
+
+    setTimeout(() => {
+      history.replaceState("", document.title, window.location.pathname + window.location.search);
+    }, 100);
   });
 });
 
@@ -42,7 +51,7 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
   const open = hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open', open);
-  
+
   if (open) {
     const sbw = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.paddingRight = `${sbw}px`;
@@ -96,7 +105,7 @@ Desired Services:
 - [ ] Video Production
 - [ ] Social Media Management
 - [ ] Other: `;
-  
+
   msgField.value = template;
   msgField.focus();
 }
@@ -104,7 +113,7 @@ Desired Services:
 function sendMsg() {
   const btn = document.querySelector('.f-btn');
   const btnText = btn.firstChild;
-  
+
   const name = document.getElementById('f-name').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
   const email = document.getElementById('f-email').value.trim();
@@ -133,11 +142,11 @@ function sendMsg() {
   const templateId = typeof CONFIG !== 'undefined' ? CONFIG.EMAILJS_TEMPLATE_ID : "";
 
   emailjs.send(serviceId, templateId, templateParams)
-    .then(function(response) {
+    .then(function (response) {
       console.log('FLARE | SUCCESS!', response.status, response.text);
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
-    }, function(error) {
+    }, function (error) {
       console.log('FLARE | FAILED...', error);
       alert('Failed to send message. Please try again or email us directly.');
       btn.disabled = false;
