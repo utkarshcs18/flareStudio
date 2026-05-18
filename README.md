@@ -1,6 +1,6 @@
-# Flare Studios — Where Ideas Ignite ✦
+# Prism Studios — Where Ideas Ignite ✦
 
-Flare Studios is a premium, high-performance creative studio website designed with a minimalist, luxury aesthetic. Built for brands that demand attention, the site features immersive animations, a professional glassmorphism design system, and seamless contact integration.
+Prism Studios is a premium, high-performance creative studio website designed with a minimalist, luxury aesthetic. Built for brands that demand attention, the site features immersive animations, a professional glassmorphism design system, and seamless contact integration.
 
 
 ## 💎 Premium Features

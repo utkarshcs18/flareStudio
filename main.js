@@ -129,8 +129,8 @@ function sendMsg() {
   }
 
   if (typeof CONFIG === 'undefined' || !CONFIG.EMAILJS_SERVICE_ID || !CONFIG.EMAILJS_TEMPLATE_ID) {
-    console.error('FLARE | ERROR: EmailJS configuration (config.js) is missing or incomplete.');
-    alert('Contact form is currently offline. Please email team.flarestudios@gmail.com directly.');
+    console.error('PRISM | ERROR: EmailJS configuration (config.js) is missing or incomplete.');
+    alert('Contact form is currently offline. Please email team.prismstudios@gmail.com directly.');
     return;
   }
 
@@ -144,16 +144,16 @@ function sendMsg() {
     phone: phone,
     industry: industry,
     message: msg,
-    to_name: "Flare.studios"
+    to_name: "Prism.studios"
   };
 
   emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, templateParams)
     .then(function (response) {
-      console.log('FLARE | SUCCESS!', response.status, response.text);
+      console.log('PRISM | SUCCESS!', response.status, response.text);
       document.getElementById('contactForm').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     }, function (error) {
-      console.log('FLARE | FAILED...', error);
+      console.log('PRISM | FAILED...', error);
       alert('Failed to send message. Please try again or email us directly.');
       btn.disabled = false;
       btnText.textContent = originalText;
