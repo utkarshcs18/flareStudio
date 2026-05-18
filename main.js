@@ -130,7 +130,7 @@ function sendMsg() {
 
   if (typeof CONFIG === 'undefined' || !CONFIG.EMAILJS_SERVICE_ID || !CONFIG.EMAILJS_TEMPLATE_ID) {
     console.error('PRISM | ERROR: EmailJS configuration (config.js) is missing or incomplete.');
-    alert('Contact form is currently offline. Please email team.prismstudios@gmail.com directly.');
+    alert('Contact form is currently offline. Please email work.prismstudios@gmail.com directly.');
     return;
   }
 
